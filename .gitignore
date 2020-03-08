@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+#Google API Key
+googleApiKey = "AIzaSyDZnC2DeWiqSRv6RDEQSl8VkjXr-HvKtGY"
+
 # compiled output
 /dist
 /tmp

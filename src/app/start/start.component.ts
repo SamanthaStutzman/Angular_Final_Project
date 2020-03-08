@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-start',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartComponent implements OnInit {
 
+  showInformation: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-}
+  timer() {
+    if (this.showInformation == false) {
+    this.showInformation = true;
+    }
+  }
+  
+  
+
+  }
+
