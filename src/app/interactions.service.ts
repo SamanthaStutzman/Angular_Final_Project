@@ -1,4 +1,4 @@
-import { Injectable, APP_ID } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 require('dotenv').config()
 
@@ -11,10 +11,9 @@ export class InteractionsService {
    url : string =  `https://maps.googleapis.com/maps/api/js?${this.api_key}&callback=initMap`;
    cityUrl :string = 'https://data.grandrapidsmi.gov/resource/ce3k-dxxd.json/';
   private googleApiKey: string = "AIzaSyDZnC2DeWiqSRv6RDEQSl8VkjXr-HvKtGY";
-  private baseQueryUrl: string = "INSERTURL1";
-  private baseFilterUrl: string = "INSERTURL2";
+  private baseQueryUrl: string = "https://data.grandrapidsmi.gov/resource/ybyy-b267.json";
 
-
+  private baseFilterUrl: string = `${this.baseQueryUrl}//maps.googleapis.com/maps/api/js?key=${this.googleApiKey}`;
 
 
   constructor(private http: HttpClient) {
@@ -41,4 +40,11 @@ export class InteractionsService {
       let response = this.cityUrl
       return response
     }
-}
+
+   }
+
+  //  getGoogleMap() {
+  //   let queryString = `${this.baseFilterUrl}`
+  //   return this.http.get(queryString);
+  // }
+
