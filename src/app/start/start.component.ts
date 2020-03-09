@@ -16,11 +16,9 @@ export class StartComponent implements OnInit {
 
   timer() {
     if (this.showInformation == false) {
-    this.showInformation = true;
+      this.showInformation = true;
     }
   }
-  
-  
 
   }
 
