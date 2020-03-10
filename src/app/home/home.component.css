@@ -4,6 +4,8 @@
     height: 100vh;
     overflow: scroll;
     color: white;
+    font-family: 'Roboto';
+    
 }
 
 #home-content {
@@ -29,13 +31,40 @@ input {
     font-size: 1rem;
 }
 
-#searchLocation,#viewMap {
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+#searchLocation {
     display: flex;
     align-self: center;
-    padding: 10px 80px;
+    padding: 10px 50px;
     text-align: center;
+}
 
+#goBtn {
+    position: relative;
+    top: 8px;
+    left: 5px;
+    width: 45px;
+    height: 45px;
+    background-color: #20B874;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
 
+hr {
+    border: 1px solid #A4D0F5;
+    width: 80vw;
+}
+#viewMap {
+    margin-top: 15px;
+    padding: 10px 100px;
+    background-color: #20B874;
+    color: white;
+    border: none;
 }
 
 #placeBtn {
@@ -49,11 +78,13 @@ input {
 #moreDetails {
     position: absolute;
     top: 20%;
-    padding: 10px 80px;
+    width: 300px;
+    padding: 5px;
     margin-top: 15px;
-    border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
+    background-color: #DBDBDC;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 #pacerScore {
@@ -63,7 +94,7 @@ input {
     align-self: center;
     align-items: center;
     position: relative;
-    bottom: 50%;
+    bottom: 40%;
 
 }
 
@@ -74,9 +105,18 @@ p {
 #link311 {
     position: absolute;
     top: 200%;
-    padding: 10px 80px;
-    background-color: teal;
-    border: 1px solid black;
-    border-radius: 8px;
+    width: 300px;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 4px;
+    background-color: #DBDBDC;
+    font-weight: bold;
+    font-size: 14px;
 
+}
+
+#backTop {
+    position: absolute;
+    top: 220%;
+    font-size: 4rem;
 }

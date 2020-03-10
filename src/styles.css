@@ -4,11 +4,24 @@
     box-sizing: border-box;
 }
 html {
-    background: rgb(0,58,98);
-    padding: 0px 15px;
+    background: #1179CC;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+/* h1 {
+
+}
+h2 {
+    
+}
+h3 {
+    
+} */
+h4 {
+    color: #DBDBDC;
+    font-size: 14px;
+    font-weight: bold;
 }
