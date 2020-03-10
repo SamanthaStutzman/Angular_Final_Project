@@ -17,13 +17,19 @@ export class RoadComponent implements OnInit {
   latitude = 42.963795;
   longitude = -85.670006;
   zoom =0;
-  
+  reply: any
   mapType = 'roadmap';
 
   constructor(private Html : InteractionsService) { }
 
   ngOnInit() {
-// this.Html.returnMap().subscribe((data: any) => this.map = data)
+
+}
+
+getCityData(){
+  let reply = this.Html.getCityData().subscribe((data:any) => this.reply = data)
+  console.log(reply)
+  
 }
    
   

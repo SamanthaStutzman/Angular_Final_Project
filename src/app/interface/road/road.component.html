@@ -1,7 +1,9 @@
 <p>road works!</p>
-<div [routerLink] = "['/road'}"
-    routerLinkActive="router-link-active">
+<div [routerLink] = "['/road'}" routerLinkActive="router-link-active">
+   <div *ngFor="let r of reply">
+        {{r}}
+</div> 
 
-
-    <button (click)= getMap()></button>
+<button id="btn" (click)= getCityData()></button>
 </div>
+
