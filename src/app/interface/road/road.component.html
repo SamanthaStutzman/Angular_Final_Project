@@ -1,9 +1,21 @@
-<p>road works!</p>
-<div [routerLink] = "['/road'}" routerLinkActive="router-link-active">
-   <div *ngFor="let r of reply">
-        {{r}}
-</div> 
-
-<button id="btn" (click)= getCityData()></button>
+<div class="nav">
+  <button class="btn"><i class="fas fa-car fa-5x"></i></button>
+  <button class="btn"><i class="fas fa-male fa-5x"></i></button>
+  <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button>
 </div>
 
+<div class="body">
+  <agm-map
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [zoom]="zoom"
+  >
+  </agm-map>
+
+  <input type="text" />
+</div>
+
+
+
+<!-- <div [routerLink] = "['/road'}" routerLinkActive="router-link-active"> -->
+<!-- </div> -->

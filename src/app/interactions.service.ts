@@ -24,6 +24,7 @@ export class InteractionsService {
 
    getCityData(){
      return this.http.get(this.getUrl())
+     
    }
   
   }

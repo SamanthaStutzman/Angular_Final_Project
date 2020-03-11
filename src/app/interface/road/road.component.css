@@ -1,6 +1,33 @@
-#btn{
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    position: relative;
+agm-map {
+  height:70vh;
+  width: 100%;
+ margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  
 }
+
+p{
+    color: white;
+}
+
+button{
+    color: white;
+}
+
+.btn{
+    background-color: transparent;
+}
+
+.nav{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 0px;
+    height: 2em;
+}
+

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {InteractionsService} from '../../interactions.service'
+
+
 @Component({
   selector: 'app-road',
-  styles: ['agm-map { height: 300px; /* height is required */ }'],
-  template: `
-    <agm-map [latitude]='latitude' [longitude]='longitude' 
-      [mapTypeId]='mapType'>
-    </agm-map>
-  `
+  styleUrls: ['./road.component.css'],
+  templateUrl: './road.component.html'
 })
 
 
@@ -16,21 +14,21 @@ export class RoadComponent implements OnInit {
 
   latitude = 42.963795;
   longitude = -85.670006;
-  zoom =0;
+  zoom =14;
   reply: any
   mapType = 'roadmap';
+ 
 
   constructor(private Html : InteractionsService) { }
 
   ngOnInit() {
 
-}
+} 
 
-getCityData(){
-  let reply = this.Html.getCityData().subscribe((data:any) => this.reply = data)
-  console.log(reply)
-  
-}
+// display(){
+//   let reply = this.Html.getCityData().subscribe((data) => this.reply = data)
+//   console.log(reply)
+// }
    
   
     
