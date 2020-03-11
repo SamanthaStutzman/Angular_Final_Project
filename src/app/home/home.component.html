@@ -2,14 +2,16 @@
     <div id="home-content">
     <h1>TransparentGR</h1>
 
-    <label>Look up your area to see road conditions
+    <label><h4>Look up your area to see road conditions</h4>
+        <form>
         <input id="searchLocation" placeholder="Search">
+        <button id="goBtn">Go</button>
+        </form>
     </label>
+        <hr>
+        <button id="viewMap">View GR</button>
 
-    <label>View your neighborhood
-        <input id="viewMap" placeholder="Search">
-    </label>
-    <div id="placeBtn" (click)="move()">
+    <div id="placeBtn" (click)="moveBottom()">
         <button id="moreDetails">More Details</button>
     </div>
     </div>
@@ -23,7 +25,7 @@
             print, and publishing industries for previewing layouts and visual 
             mockups</p>
         <button id="link311" href="https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/GR311">311 Link</button>
-        <a href=""
+        <button id="backTop" (click)="moveTop()">↳</button>
 
     </div>
  
