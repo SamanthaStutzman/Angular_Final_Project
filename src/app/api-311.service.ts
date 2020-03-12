@@ -10,13 +10,6 @@ const apiTarget : string = "https://cors-anywhere.herokuapp.com/https://data.gra
 
 const apiAuthString : string = window.btoa(`${apiKeyID}:${apiKeySecret}`);
 
-// const preflightHeaders = {
-//   headers: new HttpHeaders({
-//     'Access-Control-Request-Method' : 'GET',
-//     'Access-Control-Request-Headers' : 'Authorization'
-//   })
-// };
-
 const getHeaders = {
   headers: new HttpHeaders({
     'Authorization': `Basic M3J5NHlnY2wyanl6bDQ2bjA0ZHJsb3diaDozamE4aTh1bXh4NTRmcHVoaWZvcDkyNmgxN2ZjeHB1ODlzczZmYXBidmZ0MDFseHB0dg==`
@@ -34,7 +27,6 @@ export class Api311Service {
   data;
 
   retrieveData () {
-//    this.myHTTP.options(apiTarget, preflightHeaders);
     this.myHTTP.get(apiTarget, getHeaders).subscribe((data : any) => {this.data = data});
   }
 }
