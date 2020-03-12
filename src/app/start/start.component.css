@@ -5,11 +5,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  /* background: rgb(216,0,255);
-  background: linear-gradient(0deg, rgba(216,0,255,1) 0%, rgba(3,147,212,1) 27%, rgba(3,90,212,1) 63%); */
-  background: rgb(0,58,98);
   font-family: sans-serif;
-
   }
   
 /* Styles for loading text */
@@ -127,7 +123,7 @@ img {
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgb(0,58,98);
+  background: #1179CC;
 }
 
 #detailContainer {
@@ -150,8 +146,6 @@ h1 {
 
 /* showDetails content + animation */
 h2,p {
-  -webkit-animation: slideIn 0.75s ease forwards;
-  animation: slideIn 0.75s ease forwards;
   width: 80vw;
   padding-left: 20px;
   font-size: 1.6rem;
@@ -164,23 +158,9 @@ h2 {
   text-align: center;
 }
 
-/* showDetails content + animation */
+/* showDetails content*/
 p {
-  -webkit-animation: slideIn 1.20s ease forwards;
-  animation: slideIn 1.20s ease forwards;
   font-size: 1.3rem;
-}
-
-/* Animation for text to slide into opacity */
-@keyframes slideIn {
-    0% {
-        -webkit-transform: translateY(50px);
-        opacity: 0;
-    }
-    100% {
-        -webkit-transform: translateY(0);
-        opacity: 1;
-    }
 }
   
 /* This will be the next step into transitioning screens from showDetails to the interface / 
@@ -192,8 +172,6 @@ It will need to emit */
   }
 
   #endBtn {
-    -webkit-animation: slideIn 2.00s ease forwards;
-    animation: slideIn 2.00s ease forwards;
     position: relative;
     top: 20px;
     border-radius: 40px;
