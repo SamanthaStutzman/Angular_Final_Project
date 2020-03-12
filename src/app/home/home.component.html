@@ -2,13 +2,14 @@
     
     
     <div id="home-content">
+        
         <h1>TransparentGR</h1>
         
         <label>
             <!-- <h4>Look up your area to see road conditions</h4> -->
             <form>
                 <input id="searchLocation" placeholder="Search your area to see road conditions">
-                <button id="goBtn">Go</button>
+                <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
             </form>
         </label>
         
@@ -16,9 +17,10 @@
             <hr><p id="or">OR</p><hr>
         </span>
         
-        <button id="viewMap">View GR Map</button>
+        <button id="viewMap" [routerLink]="['/road']" routerLinkActive="router-link-active"> View GR Map</button>
         
         <button id="placeBtn" (click)="moveBottom()" id="moreDetails">More Details</button>
+        
     </div>
     
     
