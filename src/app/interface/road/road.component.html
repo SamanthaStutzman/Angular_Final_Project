@@ -9,13 +9,20 @@
     [latitude]="latitude"
     [longitude]="longitude"
     [zoom]="zoom"
+    (mapClick)="addMarker($event.coords.lat, $event.coords.lng)"
   >
+    <agm-marker
+      *ngFor="let marker of markers"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+      [opacity]="marker.alpha"
+      [markerDraggable]="false"
+    >
+    </agm-marker>
   </agm-map>
 
   <input type="text" />
 </div>
-
-
 
 <!-- <div [routerLink] = "['/road'}" routerLinkActive="router-link-active"> -->
 <!-- </div> -->

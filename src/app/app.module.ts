@@ -9,6 +9,7 @@ import { StartComponent } from './start/start.component';
 import { InterfaceComponent } from './interface/interface.component';
 import { RoadComponent } from './interface/road/road.component';
 import { AgmCoreModule } from '@agm/core';
+import { GoogleMapsModule } from '@angular/google-maps'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    GoogleMapsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDZnC2DeWiqSRv6RDEQSl8VkjXr-HvKtGY'
       /* apiKey is required, unless you are a 
