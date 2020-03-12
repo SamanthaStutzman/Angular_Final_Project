@@ -12,4 +12,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  moveBottom() {
+    location.href = "#link311";
+  }
+
+  moveTop() {
+    location.href = "#home-content";
+  }
+
+
+
 }
