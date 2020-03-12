@@ -1,20 +1,27 @@
 <div id="home-wrapper">
+    
+    
     <div id="home-content">
-    <h1>TransparentGR</h1>
-
-    <label><h4>Look up your area to see road conditions</h4>
-        <form>
-        <input id="searchLocation" placeholder="Search">
-        <button id="goBtn">Go</button>
-        </form>
-    </label>
-        <hr>
-        <button id="viewMap">View GR</button>
-
-    <div id="placeBtn" (click)="moveBottom()">
-        <button id="moreDetails">More Details</button>
+        <h1>TransparentGR</h1>
+        
+        <label>
+            <!-- <h4>Look up your area to see road conditions</h4> -->
+            <form>
+                <input id="searchLocation" placeholder="Search your area to see road conditions">
+                <button id="goBtn">Go</button>
+            </form>
+        </label>
+        
+        <span id="line">
+            <hr><p id="or">OR</p><hr>
+        </span>
+        
+        <button id="viewMap">View GR Map</button>
+        
+        <button id="placeBtn" (click)="moveBottom()" id="moreDetails">More Details</button>
     </div>
-    </div>
+    
+    
     <div id="pacerScore">
         <h2>Pacer Score</h2>
         <p>Lorem ipsum is placeholder text commonly used in the graphic, 
@@ -24,9 +31,10 @@
             mockups Lorem ipsum is placeholder text commonly used in the graphic, 
             print, and publishing industries for previewing layouts and visual 
             mockups</p>
-        <button id="link311" href="https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/GR311">311 Link</button>
-        <button id="backTop" (click)="moveTop()">↳</button>
-
+            <button id="link311" href="https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/GR311">Contact 311</button>
+            <button id="backTop" (click)="moveTop()">Back to Top</button>
+            
+        </div>
+        
     </div>
- 
-</div>
+    
