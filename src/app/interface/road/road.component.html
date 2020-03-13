@@ -21,10 +21,14 @@
     [markerDraggable]="false"
     >
     
-    </agm-marker>
+  </agm-marker>
 </agm-map>
 
-<input id="search-location" type="text" placeholder="Search a new address"/>
+<div id="search-location">
+  <input  type="text" placeholder="Search a new address"/>
+  <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
+</div>
+
 </div>
 </div>
 

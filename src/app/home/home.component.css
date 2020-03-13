@@ -45,12 +45,14 @@ input {
 form {
     display: flex;
     flex-direction: row;
+    margin: 0px
 }
 
 #searchLocation {
     /* display: flex; */
     /* align-self: center; */
-    padding: 10px 50px;
+    padding: 10px;
+    width: 260px;
     /* text-align: center; */
     border-radius: 5px 0px 0px 5px;
 }
@@ -75,20 +77,12 @@ hr {
 #viewMap {
     /* margin-top: 15px; */
     padding: 7px;
-    width: 290px;
+    width: 300px;
     background-color: #20B874;
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 20px;
-}
-
-#placeBtn {
-    /* display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 5%;
-    height: 100vh; */
 }
 
 #moreDetails {
@@ -98,9 +92,12 @@ hr {
     padding: 5px;
     /* margin-top: 15px; */
     border-radius: 5px 5px 0px 0px;
-    background-color: #DBDBDC;
+    /* background-color: #DBDBDC; */
     font-weight: bold;
     font-size: 18px;
+    background-color: rgba(164, 209, 245, 0.75);
+    border: none;
+    color: white;
 }
 
 #pacerScore {
@@ -127,7 +124,7 @@ p {
     padding: 5px;
     margin-top: 15px;
     border-radius: 4px;
-    background-color: #DBDBDC;
+    background-color: rgba(164, 209, 245, 0.5);
     font-weight: bold;
     font-size: 18px;
 
@@ -138,7 +135,7 @@ p {
     bottom: 0px;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.75);
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgb(248, 192, 9);
     border: none;
     width: 100vw;
     height: 40px;
@@ -154,4 +151,9 @@ p {
     color: #A4D0F5; 
     padding: 10px;
     font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
