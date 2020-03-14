@@ -25,8 +25,9 @@
 </agm-map>
 
 <div id="search-location">
-  <input type="text" placeholder="Search a new address" name="newLatitude" [(ngModel)]="newLatitude"/>
-  <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active" (click)="changeLocation(newLatitude)">Go</button>
+    <input type="text" placeholder="latitude" name="latitude" (newLatitude)="latitude"/>
+    <input type="text" placeholder="longitude" name="longitude" (newLatitude)="longitude"/>
+    <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button>
 </div>
 
 </div>

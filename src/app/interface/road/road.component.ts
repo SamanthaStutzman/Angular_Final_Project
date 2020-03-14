@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {InteractionsService} from '../../interactions.service'
 
-export interface ILocation {
-  newLatitude : number;
-}
-
 @Component({
   selector: 'app-road',
   styleUrls: ['./road.component.css'],
@@ -13,11 +9,11 @@ export interface ILocation {
 
 export class RoadComponent implements OnInit {
   
-  latitude = 42.963795;
-  longitude = -85.670006;
-  zoom = 14;
+  latitude : number = 42.963795;
+  longitude : number = -85.670006;
+  zoom : number = 14;
   reply: any;
-  mapType = 'roadmap';
+  mapType : string = 'roadmap';
   
   markers = [
     { lng: -85.6797945188957, lat: 42.95149365769928, alpha: 1 },
@@ -39,11 +35,12 @@ export class RoadComponent implements OnInit {
   //   let reply = this.Html.getCityData().subscribe((data) => this.reply = data)
   //   console.log(reply)
   // }   
-
-  changeLocation (newLatitude) {
-    newLatitude = this.latitude; 
-    // newLongitude = this.longitude;
+  
+  changeLocation (latitude = 30, longitude = 25) {
+    this.latitude = Number(latitude); 
+    this.longitude = Number(longitude);
     console.log(this.latitude);
+    console.log(this.longitude);
   }
   
 }
