@@ -7,7 +7,7 @@
     </div>
     <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fas fa-home fa-5x"></i></button>
   </div>
-  <div class="body">
+  <div class="body map">
     <agm-map
     [latitude]="latitude"
     [longitude]="longitude"
@@ -25,10 +25,9 @@
 </agm-map>
 
 <div id="search-location">
-  <input  type="text" placeholder="Search a new address"/>
-  <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
+  <input type="text" placeholder="Search a new address" name="newLatitude" [(ngModel)]="newLatitude"/>
+  <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active" (click)="changeLocation(newLatitude)">Go</button>
 </div>
 
 </div>
 </div>
-
