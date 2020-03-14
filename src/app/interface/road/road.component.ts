@@ -28,11 +28,22 @@ export class RoadComponent implements OnInit {
   ];
  
 
-  constructor(private Html : InteractionsService) { }
+
+
+  constructor(private http : InteractionsService) { }
+
+    //pushes coordinates into the array
+    insert(coordinates) {
+      for (let i=0; i < coordinates.length; i++) {
+        this.markers.push({ lng: coordinates[0], lat: coordinates[1], alpha: 1 })
+      }
+    }
 
   ngOnInit() {
 
 } 
+
+
 
 // display(){
 //   let reply = this.Html.getCityData().subscribe((data) => this.reply = data)

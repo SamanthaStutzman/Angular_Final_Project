@@ -7,24 +7,19 @@ import { HttpClient } from "@angular/common/http";
 })
 export class InteractionsService {
 
-   cityUrl :string = 'https://data.grandrapidsmi.gov/resource/ce3k-dxxd.json/';
-  private googleApiKey: string = "AIzaSyDZnC2DeWiqSRv6RDEQSl8VkjXr-HvKtGY";
-  private baseQueryUrl: string = "https://data.grandrapidsmi.gov/resource/ybyy-b267.json";
 
-  private baseFilterUrl: string = `${this.baseQueryUrl}//maps.googleapis.com/maps/api/js?key=${this.googleApiKey}`;
+  private queryPotholeUrl: string = "https://data.grandrapidsmi.gov/resource/kxix-u7si.json?Script%20Used=PUBLIC%20SERVICES%20-%20Pothole&$select=Coordinates";
 
 
   constructor(private http: HttpClient) {
 
     }
- getUrl(){
-      let response = this.cityUrl
-      return response
-   }
 
-   getCityData(){
-     return this.http.get(this.getUrl())
-     
-   }
+  getPotholeUrl(){
+    return this.http.get(this.queryPotholeUrl)
+    
+  }
+  
+
   
   }
