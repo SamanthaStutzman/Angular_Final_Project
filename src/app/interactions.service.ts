@@ -22,4 +22,13 @@ export class InteractionsService {
   
 
   
-  }
+  // getUrl(){
+  //   let response = this.cityUrl;
+  //   return response;
+  // }
+  
+  // getCityData(){
+  //   return this.http.get(this.getUrl())
+  // }
+  
+}

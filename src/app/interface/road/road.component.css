@@ -8,13 +8,14 @@
     flex-direction: row;
     /* justify-content: space-evenly;
     align-items: flex-start; */
-    width: 100vw;
+    /* width: 100vw; */
+    height: 50px;
 }
 
 agm-map {
     display: flex;
     justify-content: center;
-    height:90vh;
+    /* height:90vh; */
     width: 100%;
     margin-top: 20px;
 }
@@ -39,11 +40,11 @@ button {
     top: 10px;
     border-left: 1px solid white;
     height: 50px;
-  }
+}
 
 .homeBtn {
     position: relative;
-    top: 30px;
+    top: 10px;
     margin: 0;
     color: #A4D0F5;
 }
@@ -60,28 +61,45 @@ button:focus {
 .nav {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 20px;
+    /* margin-top: 20px;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 20px; */
     width: 100vw;
 }
 
 .body {
     display: flex;
     justify-content: center;
+    height: 84%;
 }
 
 #search-location {
     position: fixed;
-    width: 90%;
+    width: 95%;
     height: 5%;
     border-radius: 8px;
     border: none;
-    bottom: 25px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 input {
     padding: 10px;
     font-size: 1rem;
+    width: 300px;
+    height: 40px;
+    /* text-align: center; */
+    border-radius: 5px 0px 0px 5px;
 }
 
+#goBtn {
+    width: 40px;
+    height: 40px;
+    background-color: #20B874;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    color: white;
+    font-size: 20px;
+}

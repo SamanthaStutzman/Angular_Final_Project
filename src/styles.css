@@ -5,6 +5,7 @@
 }
 html {
     background: #1179CC;
+    scroll-behavior: smooth !important;
 }
 
 body {
