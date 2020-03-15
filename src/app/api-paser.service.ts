@@ -58544,7 +58544,7 @@ export class ApiPaserService {
     }
 ];
 
-  processPolylines (year : number) {
+  processPolylines () {
     let myReturn = [];
     for (let segment of this.harddata) {
       let coords = segment.the_geom.coordinates[0];
@@ -58557,7 +58557,7 @@ export class ApiPaserService {
       let aLine = new google.maps.Polyline({'path' : path, 'strokeColor' : chroma});
       myReturn.push(aLine);
     }
+    return myReturn;
   }
-
 }
 

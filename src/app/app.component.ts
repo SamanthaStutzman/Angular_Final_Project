@@ -15,5 +15,5 @@ export class AppComponent {
     //this.myData = this.myAPI.data;
   }
 
-  myData = this.myAPI.processPolylines(2019);
+  myData = this.myAPI.processPolylines();
 }
