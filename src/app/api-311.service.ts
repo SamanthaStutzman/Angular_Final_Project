@@ -1032,6 +1032,8 @@ export class Api311Service {
   ,{"date_and_time":"2019-04-16T15:18:51.000","script_used":"PUBLIC SERVICES - Pothole","ward":"2","neighborhood":"Creston","interaction_id":"CEF35F77-7C60-E911-9420-005056A24E2A","department":"PUBLIC SERVICES","type":"PHONE","unique_id":"CEF35F77-7C60-E911-9420-005056A24E2A-2D45393131-D30342D313-3455256494-6F-3--44532412D3"}];
   //#endregion
 
+  //pings the API to get a fresh copy of the data
+  //CURRENTLY NONFUNCTIONAL DUE TO API ISSUE
   retrieveData () {
     this.myHTTP.get(apiTarget, getHeaders).subscribe((data : any) => {this.data = data});
   }
