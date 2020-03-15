@@ -1,5 +1,19 @@
 import { Injectable } from '@angular/core';
 
+let linecolors = [
+  "FF0000",//0
+  "FF0000",//1
+  "FF0000",//2
+  "FF0000",//3
+  "FF0000",//4
+  "00FF00",//5
+  "00FF00",//6
+  "00FF00",//7
+  "00FF00",//8
+  "00FF00",//9
+  "00FF00"//10
+]
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +24,7 @@ export class ApiPaserService {
 
   constructor() { }
 
+  //harddata is a temporary, hardcoded stand-in for a response from the Paser API. 
   harddata = [
     {
         "the_geom": {
@@ -58530,7 +58545,18 @@ export class ApiPaserService {
 ];
 
   processPolylines (year : number) {
-    
+    let myReturn = [];
+    for (let segment of this.harddata) {
+      let coords = segment.the_geom.coordinates[0];
+      if(segment.the_geom.coordinates[1] != null) {console.log("Double coords!");}
+      let path = [];
+      for (let ordpair of coords) {
+        path.push(new google.maps.LatLng(ordpair[1], ordpair[0]));
+      }
+      let chroma = linecolors[segment.paser2019];
+      let aLine = new google.maps.Polyline({'path' : path, 'strokeColor' : chroma});
+      myReturn.push(aLine);
+    }
   }
 
 }

@@ -1046,7 +1046,8 @@ export class Api311Service {
     for (let report of this.harddata) {
       let reportDate = new Date(report.date_and_time);
       if(reportDate >= dateCutoff && report.coordinates != null) {
-        let myCoords = {'lat' : report.coordinates.coordinates[0], 'lng' : report.coordinates.coordinates[1]};
+        //please note that the coordinates are in socrata in lng/lat (x/y) order, so they have to be transcribed reversed. 
+        let myCoords = {'lat' : report.coordinates.coordinates[1], 'lng' : report.coordinates.coordinates[0]};
         myReturn.push(myCoords);
       }
       //if you've reached reports that are too old, return

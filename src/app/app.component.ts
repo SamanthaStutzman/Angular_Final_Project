@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Api311Service } from './api-311.service';
+import { ApiPaserService } from './api-paser.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,10 @@ import { Api311Service } from './api-311.service';
 export class AppComponent {
   title = 'AngularFinalProject';
 
-  constructor (private myAPI : Api311Service) { 
+  constructor (private myAPI : ApiPaserService) { 
     //this.myAPI.retrieveData();
     //this.myData = this.myAPI.data;
   }
 
-  myData = this.myAPI.processCoordinates('January 1, 2019');
+  myData = this.myAPI.processPolylines(2019);
 }
