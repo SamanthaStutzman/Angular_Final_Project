@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'AngularFinalProject';
 
   constructor (private myAPI : Api311Service) { 
-    this.myAPI.retrieveData();
-    this.myData = this.myAPI.data;
+    //this.myAPI.retrieveData();
+    //this.myData = this.myAPI.data;
   }
 
-  myData : JSON = this.myAPI.data;
+  myData = this.myAPI.processCoordinates('January 1, 2019');
 }
