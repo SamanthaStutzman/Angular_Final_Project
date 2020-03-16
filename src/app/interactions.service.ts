@@ -10,7 +10,6 @@ export class InteractionsService {
 
   private queryPotholeUrl: string = "https://data.grandrapidsmi.gov/resource/kxix-u7si.json?Script%20Used=PUBLIC%20SERVICES%20-%20Pothole&$select=Coordinates";
 
-
   constructor(private http: HttpClient) {
 
     }
