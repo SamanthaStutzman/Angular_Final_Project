@@ -13,7 +13,7 @@ const apiAuthString : string = window.btoa(`${apiKeyID}:${apiKeySecret}`);
 
 const getHeaders = {
   headers: new HttpHeaders({
-    'X-App-Token' : 'upBbXlrrBCDo8298hb1VDACNp'
+    'Authorization' : apiAuthString
   })
 };
 
