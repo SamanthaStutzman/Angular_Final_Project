@@ -1,34 +1,26 @@
 <div id="road-wrapper">
-  <div id="road-content">  
+  <!-- <div id="road-content">
     <div class="nav">
       <button class="btn"><i class="fas fa-car fa-5x"></i></button>
       <button class="btn"><i class="fas fa-male fa-5x"></i></button>
       <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button>
     </div>
-    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fas fa-home fa-5x"></i></button>
-  </div>
+    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active"><i
+        class="fas fa-home fa-5x"></i></button> -->
+  <!-- </div> -->
   <div class="body map">
-    <agm-map
-    [latitude]="latitude"
-    [longitude]="longitude"
-    [zoom]="zoom"
-    >
-    
-    <agm-marker
-    *ngFor="let marker of markers"
-    [latitude]="marker.lat"
-    [longitude]="marker.lng"
-    [markerDraggable]="false"
-    >
-    
-  </agm-marker>
-</agm-map>
+    <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
 
-<div id="search-location">
-    <input type="text" placeholder="latitude" name="latitude" (newLatitude)="latitude"/>
-    <input type="text" placeholder="longitude" name="longitude" (newLatitude)="longitude"/>
-    <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button>
-</div>
+      <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng"
+        [markerDraggable]="false">
 
-</div>
+      </agm-marker>
+    </agm-map>
+
+    <div id="search-location">
+      <input type="text" placeholder="latitude" name="latitude" (newLatitude)="latitude" />
+      <input type="text" placeholder="longitude" name="longitude" (newLatitude)="longitude" />
+      <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button>
+    </div> -->
+  </div>
 </div>
