@@ -1,1 +1,42 @@
-<p>home works!</p>
+<div id="home-wrapper">
+    
+    
+    <div id="home-content">
+        
+        <h1>TransparentGR</h1>
+        
+        <label>
+            <!-- <h4>Look up your area to see road conditions</h4> -->
+            <form>
+                <input id="searchLocation" placeholder="Search an address to see roads">
+                <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
+            </form>
+        </label>
+        
+        <span id="line">
+            <hr><p id="or">OR</p><hr>
+        </span>
+        
+        <button id="viewMap" [routerLink]="['/road']" routerLinkActive="router-link-active"> View GR Map</button>
+        
+        <button id="moreDetails" (click)="moveBottom()">More Details</button>
+        
+    </div>
+    
+    
+    <div id="pacerScore">
+        <h2>Pacer Score</h2>
+        <p>Lorem ipsum is placeholder text commonly used in the graphic, 
+            print, and publishing industries for previewing layouts and visual 
+            mockups Lorem ipsum is placeholder text commonly used in the graphic, 
+            print, and publishing industries for previewing layouts and visual 
+            mockups Lorem ipsum is placeholder text commonly used in the graphic, 
+            print, and publishing industries for previewing layouts and visual 
+            mockups</p>
+            <button id="link311"><a href="https://www.grandrapidsmi.gov/Government/Programs-and-Initiatives/GR311" target="_blank">Contact 311</a></button>
+            <button id="backTop" (click)="moveTop()">Back to Top</button>
+            
+        </div>
+        
+    </div>
+    

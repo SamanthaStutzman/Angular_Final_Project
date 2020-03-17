@@ -1,1 +1,27 @@
-<p>start works!</p>
+<div 
+id="loading-wrapper" 
+[routerLink]="['/start']" 
+routerLinkActive="router-link-active"
+class="animated zoomOut slower delay-4s">
+    <div id="loading-text">Loading...</div>
+    <div id="loading-content"></div>
+</div>
+
+<div class="animated zoomIn slower delay-4s" >
+    <div class="showDetails">
+        <h1>Transparent GR</h1>
+        <div id="detailContainer">
+                <img alt="logo" src="assets/logo.png" style="width: 250px; height: 250px;">
+            <h2>Welcome!</h2>
+            <p>Our Mission is to, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div id="endDetails">
+                <button 
+                id="endBtn" 
+                [routerLink]="['/home']" 
+                routerLinkActive="router-link-active"
+                >Lets get started!</button>
+            </div>
+        </div>
+    </div>
+</div>
