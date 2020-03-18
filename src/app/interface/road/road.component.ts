@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {InteractionsService} from '../../interactions.service'
 
 @Component({
   selector: 'app-road',
@@ -26,7 +25,7 @@ export class RoadComponent implements OnInit {
   ];
   
   
-  constructor(private Html : InteractionsService) { }
+  constructor() { }
   
   ngOnInit() {  
   } 

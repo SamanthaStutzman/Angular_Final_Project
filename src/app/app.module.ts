@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { GoogleMapsModule } from '@angular/google-maps';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,14 +16,15 @@ import { RoadComponent } from './interface/road/road.component';
     AppComponent,
     HomeComponent,
     StartComponent,
+    RoadComponent,
     InterfaceComponent
   ],
   imports: [
     BrowserModule,
-    GoogleMapsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
