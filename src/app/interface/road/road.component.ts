@@ -31,12 +31,7 @@ export class RoadComponent implements OnInit {
   
   ngOnInit() {  
   } 
+
   
-  changeLocation (latitude, longitude) {
-    this.latitude = Number(latitude); 
-    this.longitude = Number(longitude);
-    console.log(this.latitude);
-    console.log(this.longitude);
-  }
   
 }
