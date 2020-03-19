@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class RoadComponent implements OnInit {
   
-  zoom = 11
+  width = "100%";
+  height = "100%";
+
+  zoom = 11;
   // center: google.maps.LatLng
   myLatLng= new google.maps.LatLng({lng:-85.6681, lat: 42.9634})
   markers= []
