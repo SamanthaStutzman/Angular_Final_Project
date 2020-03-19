@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InteractionsService } from './interactions.service';
+import { Api311Service } from './api-311.service';
 
-describe('InteractionsService', () => {
+describe('Api311Service', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: InteractionsService = TestBed.get(InteractionsService);
+    const service: Api311Service = TestBed.get(Api311Service);
     expect(service).toBeTruthy();
   });
 });

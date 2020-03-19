@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {InteractionsService} from '../../interactions.service'
 
 @Component({
   selector: 'app-road',
@@ -14,6 +13,8 @@ export class RoadComponent implements OnInit {
   zoom : number = 14;
   reply: any;
   mapType : string = 'roadmap';
+  center : any = {lng: this.longitude, lat: this.latitude}
+  markerOptions : any ={icon: 'http://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png'}
   
   markers = [
     { lng: -85.6797945188957, lat: 42.95149365769928, alpha: 1 },
@@ -24,32 +25,12 @@ export class RoadComponent implements OnInit {
     { lng: -85.67794840391285, lat:  42.95140308170747, alpha: 1 },
     { lng: -85.67730775795953, lat:  42.951190967442535, alpha: 1 }
   ];
- 
-
-
-
-  constructor(private http : InteractionsService) { }
-
-    //pushes coordinates into the array
-    insert(coordinates) {
-      for (let i=0; i < coordinates.length; i++) {
-        this.markers.push({ lng: coordinates[0], lat: coordinates[1], alpha: 1 })
-      }
-    }
-
-// display(){
-//   let reply = this.Html.getCityData().subscribe((data) => this.reply = data)
-//   console.log(reply)
-// }
-   
+  
+  
+  constructor() { }
   
   ngOnInit() {  
   } 
-  
-  // display(){
-  //   let reply = this.Html.getCityData().subscribe((data) => this.reply = data)
-  //   console.log(reply)
-  // }   
   
   changeLocation (latitude, longitude) {
     this.latitude = Number(latitude); 
