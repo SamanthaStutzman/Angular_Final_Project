@@ -12,12 +12,13 @@
     height: 50px;
 }
 
-agm-map {
+google-map {
     display: flex;
     justify-content: center;
-    /* height:90vh; */
+    height: 100%;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 p {
@@ -79,7 +80,7 @@ button:focus {
     height: 5%;
     border-radius: 8px;
     border: none;
-    bottom: 15px;
+    bottom: 22.5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -88,8 +89,8 @@ button:focus {
 input {
     padding: 10px;
     font-size: 1rem;
-    /* width: 300px; */
-    width: 150px;
+    width: 300px;
+    /* width: 150px; */
     height: 40px;
     /* border-radius: 5px 0px 0px 5px; */
 }

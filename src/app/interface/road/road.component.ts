@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {InteractionsService} from '../../interactions.service'
 
 @Component({
   selector: 'app-road',
@@ -40,8 +39,7 @@ export class RoadComponent implements OnInit {
   //   { lng: -85.67730775795953, lat:  42.951190967442535, alpha: 1 }
   // ];
   
-  
-  // constructor(private Html : InteractionsService) { }
+  constructor() { }
   
   ngOnInit() {  
   } 
