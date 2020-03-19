@@ -1,51 +1,31 @@
 <div id="road-wrapper">
   <div id="road-content">
+
     <div class="nav">
       <button class="btn"><i class="fas fa-car fa-5x"></i></button>
       <button class="btn"><i class="fas fa-male fa-5x"></i></button>
       <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button>
     </div>
-    <button
-      class="btn homeBtn"
-      [routerLink]="['/home']"
-      routerLinkActive="router-link-active"
-    >
+
+    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
       <i class="fas fa-home fa-5x"></i>
     </button>
+
   </div>
+
   <div class="body">
-   
+    <google-map [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
 
-    <google-map 
-    [center]="myLatLng" 
-    [zoom]="zoom"
-    (mapClick)="click($event)"
-  
-
-    >
-      <map-marker
-        *ngFor="let marker of markers"
-        [position]="marker.position"
+      <map-marker *ngFor="let marker of markers" 
+        [position]="marker.position" 
         [label]="marker.label"
-        [title]="marker.title"
-        [options]="marker.options"
-      >
-      </map-marker>
-      <map-polyline
-      **ngFor="let line of polylines"
-      
-      >
+        [title]="marker.title" [options]="marker.options"
+      ></map-marker>
 
-      </map-polyline
-     >
+      <map-polyline *ngFor="let line of polylines"
+        [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
+      ></map-polyline>
+
     </google-map>
-
-   
   </div>
-
-  <!-- <div id="search-location">
-    <input type="text" placeholder="latitude" name="latitude" [(ngModel)]="latitude"/>
-    <input type="text" placeholder="longitude" name="longitude" [(ngModel)]="longitude"/>
-    <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button>
-</div> -->
 </div>
