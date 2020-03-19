@@ -1,25 +1,41 @@
 <div id="road-wrapper">
+  
+  <div id="road-content">
     
-    <div id="road-content">  
-        <div class="nav">
-            <button class="btn"><i class="fas fa-car fa-5x"></i></button>
-            <button class="btn"><i class="fas fa-male fa-5x"></i></button>
-            <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button>
-        </div>
-        <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fas fa-home fa-5x"></i></button>
+    <div class="nav">
+      <button class="btn"><i class="fas fa-car fa-5x"></i></button>
+      <button class="btn"><i class="fas fa-male fa-5x"></i></button>
+      <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button>
     </div>
     
-    <!-- <div class="google-map"></div> -->
-    <google-map [width]="width" [height]="height"></google-map>
+    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
+      <i class="fas fa-home fa-5x"></i>
+    </button>
     
-    <!-- <google-map [center]="myLatLng" [zoom]="zoom"></google-map> -->
+  </div>
+  
+  <!-- <div class="body"> -->
+    <google-map [width]="width" [height]="height" [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
+      
+      <map-marker *ngFor="let marker of markers" 
+      [position]="marker.position" 
+      [label]="marker.label"
+      [title]="marker.title" [options]="marker.options"
+      ></map-marker>
+      
+      <map-polyline *ngFor="let line of polylines"
+      [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
+      ></map-polyline>
+      
+    </google-map>
+    <!-- </div> -->
     
     <div id="search-location">
-        <input type="text" placeholder="Search a new location"/>
-        <!-- <input type="text" placeholder="latitude" name="latitude" (newLatitude)="latitude"/>
-            <input type="text" placeholder="longitude" name="longitude" (newLatitude)="longitude"/> -->
-            <button id="goBtn">Go</button>
-            <!-- <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button> -->
+      <input type="text" placeholder="Search a new location"/>
+      <!-- <input type="text" placeholder="latitude" name="latitude" (newLatitude)="latitude"/>
+        <input type="text" placeholder="longitude" name="longitude" (newLatitude)="longitude"/> -->
+        <button id="goBtn">Go</button>
+        <!-- <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button> -->
     </div>
-        
+      
 </div>

@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
-let linecolors = [
-  "FF0000",//0
-  "FF0000",//1
-  "FF0000",//2
-  "FF0000",//3
-  "FF0000",//4
-  "00FF00",//5
-  "00FF00",//6
-  "00FF00",//7
-  "00FF00",//8
-  "00FF00",//9
-  "00FF00"//10
+let linecolors : string[] = [
+  "#FFFFFF",//0
+  "#FF0000",//1
+  "#FF0000",//2
+  "#F0F000",//3
+  "#F0F000",//4
+  "#F0F000",//5
+  "#F0F000",//6
+  "#00FF00",//7
+  "#00FF00",//8
+  "#00FF00",//9
+  "#00FF00"//10
 ]
 
 @Injectable({
@@ -58553,8 +58553,8 @@ export class ApiPaserService {
       for (let ordpair of coords) {
         path.push(new google.maps.LatLng(ordpair[1], ordpair[0]));
       }
-      let chroma = linecolors[segment.paser2019];
-      let aLine = new google.maps.Polyline({'path' : path, 'strokeColor' : chroma});
+      let chroma : string = linecolors[segment.paser2019];
+      let aLine = {'path' : path, 'strokeColor' : chroma};
       myReturn.push(aLine);
     }
     return myReturn;
