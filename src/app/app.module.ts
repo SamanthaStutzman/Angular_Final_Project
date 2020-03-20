@@ -10,7 +10,6 @@ import { HomeComponent } from './home/home.component';
 import { StartComponent } from './start/start.component';
 import { InterfaceComponent } from './interface/interface.component';
 import { RoadComponent } from './interface/road/road.component';
-
 @NgModule({
   declarations: [
     AppComponent,

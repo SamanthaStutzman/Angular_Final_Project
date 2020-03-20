@@ -8,10 +8,21 @@ import { ApiPaserService } from "../.././api-paser.service";
   templateUrl: "./road.component.html"
 })
 export class RoadComponent implements OnInit {
+<<<<<<< HEAD
   zoom = 11;
   myLatLng = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
+=======
+  
+  width = "100%";
+  height = "100%";
+
+  zoom = 12;
+  // center: google.maps.LatLng
+  myLatLng= new google.maps.LatLng({lng:-85.6681, lat: 42.9634})
+>>>>>>> c4b26aab3b8aed0268a74663978676716493d9e8
   markers = [];
   polylines = [];
+
   options: google.maps.MapOptions = {
     mapTypeId: "hybrid",
     zoomControl: false,
