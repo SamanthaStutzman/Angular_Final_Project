@@ -1,8 +1,10 @@
 <div id="road-wrapper">
+
   
   <div id="road-content">
     
-    <div class="nav">
+    <div class="nav">  
+      <img alt="logo" src="assets/logo.png" style="width: 100px; height: 100px;">
      <input name="button" [(ngModel)]="filter" value="road" type="radio" />Road Quality
       <input name="button" [(ngModel)]="filter"  value="pothole" type="radio" />Potholes
       <button (click)= "onClick(road, pothole)">Click Here to Filter</button>
