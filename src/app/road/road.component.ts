@@ -10,11 +10,13 @@ import { GeocodeService } from '../geocode.service';
 
 export class RoadComponent implements OnInit {
 
+  //html like dom elements 
   @ViewChild('googleMap') gMap: GoogleMap;
   @ViewChild('searchError') searchError: ElementRef;
   @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow;
   @ViewChild('infoWindowContent') infoWindowContent: ElementRef;
   
+  //positioning for default location
   latitude : number = 42.963795;
   longitude : number = -85.670006;
   zoom : number = 14;
@@ -23,10 +25,10 @@ export class RoadComponent implements OnInit {
   center : any = {lng: this.longitude, lat: this.latitude}
   markerOptions : any = {icon: 'http://maps.google.com/mapfiles/kml/paddle/red-circle-lv.png'}
 
+  //search mark options
   showMarkers = true;
   markerPositions: google.maps.LatLng[] = this.geocodeService.getGeolocations();
   visibleMarkers: google.maps.LatLng[] = [];
-
   LatLng = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
   geocoder = new google.maps.Geocoder();
   initZoom = 11;
