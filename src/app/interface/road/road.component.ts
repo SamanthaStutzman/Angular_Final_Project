@@ -16,7 +16,6 @@ export class RoadComponent implements OnInit {
   height = "100%";
   Geocoder = new google.maps.Geocoder
   zoom = 12;
-  // center: google.maps.LatLng
   center = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
   markers = [];
   polylines = [];
@@ -39,10 +38,7 @@ export class RoadComponent implements OnInit {
     private searchLocation: SearchLocationService
   ) {}
 
-  ngOnInit() {
-
- 
-  }
+  ngOnInit() {}
 
   addMarker(myLat: number, myLng: number) {
     this.markers.push({
@@ -76,12 +72,4 @@ export class RoadComponent implements OnInit {
       this.zoom = 16
     })
   }
-
-  // getAddress(address){
-  //   let coordinates;
-  //   this.Geocoder.geocode({address: address}, function(results, status){
-  //   setCenter(results[0].geometry.location);
-  //   })
-
-  // }
 }
