@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Api311Service } from "../.././api-311.service";
 import { ApiPaserService } from "../.././api-paser.service";
+import { mapToMapExpression } from '@angular/compiler/src/render3/util';
+import { SearchLocationService } from 'src/app/search-location.service';
+
 
 @Component({
   selector: "app-road",
@@ -8,15 +11,15 @@ import { ApiPaserService } from "../.././api-paser.service";
   templateUrl: "./road.component.html"
 })
 export class RoadComponent implements OnInit {
+  address: string;
   width = "100%";
   height = "100%";
-
+  Geocoder = new google.maps.Geocoder
   zoom = 12;
   // center: google.maps.LatLng
-  myLatLng = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
+  center = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
   markers = [];
   polylines = [];
-
   options: google.maps.MapOptions = {
     mapTypeId: "hybrid",
     zoomControl: false,
@@ -27,16 +30,19 @@ export class RoadComponent implements OnInit {
   };
   road: any;
   pothole: any;
-  filter: string = "road";
-
+  filter: string = "road"
   visible;
-
+  
   constructor(
     private api311: Api311Service,
-    private apiPaser: ApiPaserService
+    private apiPaser: ApiPaserService,
+    private searchLocation: SearchLocationService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+ 
+  }
 
   addMarker(myLat: number, myLng: number) {
     this.markers.push({
@@ -63,4 +69,19 @@ export class RoadComponent implements OnInit {
       }
     }
   }
+
+  findAddress(){
+    this.searchLocation.getAddress(this.address).subscribe((data:any) => {
+      this.center= data.results[0].geometry.location
+      this.zoom = 16
+    })
+  }
+
+  // getAddress(address){
+  //   let coordinates;
+  //   this.Geocoder.geocode({address: address}, function(results, status){
+  //   setCenter(results[0].geometry.location);
+  //   })
+
+  // }
 }
