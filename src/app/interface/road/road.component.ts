@@ -8,10 +8,6 @@ import { ApiPaserService } from "../.././api-paser.service";
   templateUrl: "./road.component.html"
 })
 export class RoadComponent implements OnInit {
-<<<<<<< HEAD
-  zoom = 11;
-  myLatLng = new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 });
-=======
   
   width = "100%";
   height = "100%";
@@ -19,10 +15,9 @@ export class RoadComponent implements OnInit {
   zoom = 12;
   // center: google.maps.LatLng
   myLatLng= new google.maps.LatLng({lng:-85.6681, lat: 42.9634})
->>>>>>> c4b26aab3b8aed0268a74663978676716493d9e8
   markers = [];
   polylines = [];
-
+  
   options: google.maps.MapOptions = {
     mapTypeId: "hybrid",
     zoomControl: false,
@@ -34,39 +29,78 @@ export class RoadComponent implements OnInit {
   road: any;
   pothole: any;
   filter: string = "road";
-
+  
   visible;
-
+  
   constructor(
     private api311: Api311Service,
     private apiPaser: ApiPaserService
-  ) {}
+    ) {}
+    
+    ngOnInit() {}
+    
+    addMarker(myLat: number, myLng: number) {
+      this.markers.push({
+        position: {
+          lat: myLat,
+          lng: myLng
+        },
+        title: "Marker title " + (this.markers.length + 1)
+      });
+    }
+    
+    click(event: google.maps.MouseEvent) {}
+    
+    // onClick(road, pothole) {
+    //   if (this.filter === "pothole") {
+    //     this.polylines = [];
+    //     for (let place of this.api311.processCoordinates("January 1 2019")) {
+    //       this.addMarker(place.lat, place.lng);
+    //     }
+    //   } else if (this.filter != "pothole") {
+    //     this.markers = [];
+    //     for (let lineyboi of this.apiPaser.processPolylines()) {
+    //       this.polylines.push(lineyboi);
+    //     }
+    //   }
+    // }
+    
+    toggleOnRoad:boolean = true;
+    toggleOnPothole:boolean = true;
+    radioRoad:boolean = true;
+    radioPothole:boolean = true;
 
-  ngOnInit() {}
+    // radioBtnClassyRoad = {
+    //   'radioBtnActive': this.toggleOnRoad,
+    //   'radioBtnInactive': !this.toggleOnRoad
+    // };
 
-  addMarker(myLat: number, myLng: number) {
-    this.markers.push({
-      position: {
-        lat: myLat,
-        lng: myLng
-      },
-      title: "Marker title " + (this.markers.length + 1)
-    });
-  }
-
-  click(event: google.maps.MouseEvent) {}
-
-  onClick(road, pothole) {
-    if (this.filter === "pothole") {
-      this.polylines = [];
+    onClickRoad() {
+      if (this.toggleOnRoad) {
+        for (let lineyboi of this.apiPaser.processPolylines()) {
+          this.polylines.push(lineyboi);
+          this.radioRoad = false;
+        }
+        this.toggleOnRoad = false;
+      } else {
+        this.polylines = [];
+        this.toggleOnRoad = true;
+        this.radioRoad = true;
+      }
+    }
+    
+    onClickPothole() {
+      if (this.toggleOnPothole) {
       for (let place of this.api311.processCoordinates("January 1 2019")) {
         this.addMarker(place.lat, place.lng);
       }
-    } else if (this.filter != "pothole") {
-      this.markers = [];
-      for (let lineyboi of this.apiPaser.processPolylines()) {
-        this.polylines.push(lineyboi);
+      this.toggleOnPothole = false;
+      this.radioPothole = false;
+    } else {
+        this.markers = [];
+        this.toggleOnPothole = true;
+        this.radioPothole = true;
       }
     }
   }
-}
+  
