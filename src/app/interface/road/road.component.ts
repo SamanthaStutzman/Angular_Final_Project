@@ -29,9 +29,7 @@ export class RoadComponent implements OnInit {
     maxZoom: 15,
     minZoom: 8
   };
-  road: any;
-  pothole: any;
-  filter: string = "road";
+  
   visible;
   
   constructor( private api311: Api311Service, private apiPaser: ApiPaserService, private searchLocation: SearchLocationService ) {}

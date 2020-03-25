@@ -18,11 +18,13 @@
     position: relative;
 }
 
-h1 {
-    /* margin-bottom: 50%; */
+.logo {
     position: absolute;
     top: 25px;
-
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
 }
 
 h2 {
