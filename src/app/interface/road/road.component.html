@@ -1,8 +1,10 @@
 <div id="road-wrapper">
   
+  
   <div id="road-content">
     
     <div class="nav">
+      <img alt="logo" src="assets/logo.png" style="width: 100px; height: 100px;">
       <button class="btn radioBtn left" [(ngModel)]="filter" name="road" value="road" (click)= "onClickRoad()" [ngClass]="{'radioBtnInactive' : this.radioRoad, 'radioBtnActive' : !this.radioRoad}">Road Quality</button>
       <button class="btn radioBtn right" [(ngModel)]="filter" name="pothole" value="pothole" (click)= "onClickPothole()" [ngClass]="{'radioBtnInactive' : this.radioPothole, 'radioBtnActive' : !this.radioPothole}">Potholes</button>
       <!-- <button (click)= "onClick(road, pothole)">Click Here to Filter</button> -->
@@ -17,27 +19,25 @@
       
     </div>
     
-    <!-- <div class="body"> -->
-      <google-map [width]="width" [height]="height" [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
-        
-        <map-marker *ngFor="let marker of markers" 
-        [position]="marker.position" 
-        [label]="marker.label"
-        [title]="marker.title" [options]="marker.options"
-        ></map-marker>
-        
-        <map-polyline *ngFor="let line of polylines"
-        [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
-        ></map-polyline>
-        
-      </google-map>
-      <!-- </div> -->
+    
+    <google-map [width]="width" [height]="height" [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
       
-      <div id="search-location">
-        <input type="text" placeholder="Search a new location"/>
-        <button id="goBtn">Go</button>
-        <!-- <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button> -->
-      </div>
+      <map-marker *ngFor="let marker of markers" 
+      [position]="marker.position" 
+      [label]="marker.label"
+      [title]="marker.title" [options]="marker.options"
+      ></map-marker>
       
+      <map-polyline *ngFor="let line of polylines"
+      [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
+      ></map-polyline>
+      
+    </google-map>
+    
+    <div id="search-location">
+      <input type="text" [(ngModel)]="address" placeholder="Search a new location"/>
+      <button (click)= "findAddress()" id="goBtn">Go</button>
     </div>
     
+  </div>
+  
