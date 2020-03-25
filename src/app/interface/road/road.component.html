@@ -1,26 +1,26 @@
 <div id="road-wrapper">
-
+  
   
   <div id="road-content">
     
-    <div class="nav">  
+    <div class="nav">
       <img alt="logo" src="assets/logo.png" style="width: 100px; height: 100px;">
-     <input name="button" [(ngModel)]="filter" value="road" type="radio" />Road Quality
-      <input name="button" [(ngModel)]="filter"  value="pothole" type="radio" />Potholes
-      <button (click)= "onClick(road, pothole)">Click Here to Filter</button>
+      <button class="btn radioBtn left" [(ngModel)]="filter" name="road" value="road" (click)= "onClickRoad()" [ngClass]="{'radioBtnInactive' : this.radioRoad, 'radioBtnActive' : !this.radioRoad}">Road Quality</button>
+      <button class="btn radioBtn right" [(ngModel)]="filter" name="pothole" value="pothole" (click)= "onClickPothole()" [ngClass]="{'radioBtnInactive' : this.radioPothole, 'radioBtnActive' : !this.radioPothole}">Potholes</button>
+      <!-- <button (click)= "onClick(road, pothole)">Click Here to Filter</button> -->
       <!-- <button class="btn"><i class="fas fa-car fa-5x"></i></button>
-      <button class="btn"><i class="fas fa-male fa-5x"></i></button>
-      <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button> -->
+        <button class="btn"><i class="fas fa-male fa-5x"></i></button>
+        <button class="btn"><i class="fas fa-bicycle fa-5x"></i></button> -->
+      </div>
+      
+      <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
+        <i class="fas fa-home fa-5x"></i>
+      </button>
+      
     </div>
     
-    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
-      <i class="fas fa-home fa-5x"></i>
-    </button>
     
-  </div>
-  
-  <!-- <div class="body"> -->
-    <google-map [width]="width" [height]="height" [center]="center" [zoom]="zoom" (mapClick)="click($event)">
+    <google-map [width]="width" [height]="height" [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
       
       <map-marker *ngFor="let marker of markers" 
       [position]="marker.position" 
@@ -33,12 +33,11 @@
       ></map-polyline>
       
     </google-map>
-    <!-- </div> -->
     
     <div id="search-location">
       <input type="text" [(ngModel)]="address" placeholder="Search a new location"/>
-        <button (click)= "findAddress()" id="goBtn">Go</button>
-        <!-- <button id="goBtn" (click)="changeLocation(latitude, longitude)">Go</button> -->
+      <button (click)= "findAddress()" id="goBtn">Go</button>
     </div>
-      
-</div>
+    
+  </div>
+  

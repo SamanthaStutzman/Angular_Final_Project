@@ -55,7 +55,7 @@ button:focus {
 
 .nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100vw;
 }
 
@@ -83,4 +83,33 @@ input {
     border-radius: 0px 5px 5px 0px;
     color: white;
     font-size: 20px;
+}
+
+.radioBtn {
+    width: 125px;
+    height: 40px;
+    font-size: 15px;
+    background-color: rgb(241, 240, 240);
+    color: darkgray;
+    border: 3px white solid;
+}
+
+.left {
+    border-radius: 25px 0px 0px 25px;
+}
+
+.right {
+    border-radius: 0px 25px 25px 0px ;
+}
+
+.radioBtnActive {
+    background-color: rgb(255, 201, 53);
+    color: white;
+    font-weight: bold;
+}
+
+.radioBtnInactive {
+    background-color: rgb(241, 240, 240);
+    color: darkgray;
+    font-weight: normal;
 }
