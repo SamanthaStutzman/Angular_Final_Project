@@ -20,7 +20,7 @@
     </div>
     
     
-    <google-map [width]="width" [height]="height" [center]="myLatLng" [zoom]="zoom" (mapClick)="click($event)">
+    <google-map [width]="width" [height]="height" [center]="center" [zoom]="zoom" (mapClick)="click($event)">
       
       <map-marker *ngFor="let marker of markers" 
       [position]="marker.position" 
