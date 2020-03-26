@@ -9,7 +9,8 @@ const apiKeySecret : string = "3ja8i8umxx54fpuhifop926h17fcxpu89ss6fapbvft01lxpt
 //http://grand-rapids-proxy.herokuapp.com/proxy/resource/ykbs-97kp.json
 
 //this is the URL for the 311 dataset, filtered to only return pothole reports and sort in order of date descending (most recent first)
-const apiTarget : string = "https://grand-rapids-proxy.herokuapp.com/proxy/resource/kxix-u7si.json?Script%20Used=PUBLIC%20SERVICES%20-%20Pothole&$order=date_and_time%20DESC";
+//const apiTarget : string = "https://grand-rapids-proxy.herokuapp.com/proxy/resource/kxix-u7si.json?Script%20Used=PUBLIC%20SERVICES%20-%20Pothole&$order=date_and_time%20DESC";
+const apiTarget : string = "https://grand-rapids-proxy.herokuapp.com/proxy/resource/kxix-u7si.json";
 
 const apiAuthString : string = window.btoa(`${apiKeyID}:${apiKeySecret}`);
 
@@ -33,7 +34,7 @@ export class Api311Service {
   //pings the API to get a fresh copy of the data
   //CURRENTLY NONFUNCTIONAL DUE TO API ISSUE
   retrieveData () {
-    this.myHTTP.get(apiTarget, getHeaders).subscribe((data : any) => {this.data = data});
+    this.myHTTP.get(apiTarget).subscribe((data : any) => {this.data = data});
   }
 
   //extracts coordinates from the currently stored dataset, back to the cutoff date provided
