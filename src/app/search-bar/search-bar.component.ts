@@ -12,14 +12,16 @@ export class SearchBarComponent implements OnInit {
   zoom :number;
   constructor(private searchLocation: SearchLocationService) {}
 
+  
   ngOnInit(): void {}
+  
   findAddress() {
     this.searchLocation.getAddress(this.address).subscribe((data: any) => {
-      this.center.emit({
+      this.center.emit({ 
         results: data.results[0].geometry.location,
         zoom: this.zoom = 16
       });
-      //
+      
     });
   }
 }
