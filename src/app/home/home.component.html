@@ -6,10 +6,9 @@
         <img alt="logo" src="assets/logo.png" style="width: 250px; height: 250px;">
         
         <label>
-            <form>
-                <input id="searchLocation" placeholder="Search an address to see roads">
+            <search-bar (center)= "locateAddress($event)">
                 <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
-            </form>
+            </search-bar>
         </label>
         
         <span id="line">

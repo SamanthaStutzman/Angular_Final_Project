@@ -19,5 +19,11 @@ export class HomeComponent implements OnInit {
   moveTop() {
     location.href = "#home-content";
   }
+
+  locateAddress(event){
+    
+
+  }
+  
   
 }

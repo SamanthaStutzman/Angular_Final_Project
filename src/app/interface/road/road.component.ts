@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Api311Service } from "../.././api-311.service";
 import { ApiPaserService } from "../.././api-paser.service";
-import { mapToMapExpression } from '@angular/compiler/src/render3/util';
-import { SearchLocationService } from 'src/app/search-location.service';
+
+
 
 
 @Component({
@@ -34,7 +34,7 @@ export class RoadComponent implements OnInit {
   filter: string = "road";
   visible;
   
-  constructor( private api311: Api311Service, private apiPaser: ApiPaserService, private searchLocation: SearchLocationService ) {}
+  constructor( private api311: Api311Service, private apiPaser: ApiPaserService, ) {}
   
   ngOnInit() {}
   
@@ -49,20 +49,6 @@ export class RoadComponent implements OnInit {
   }
   
   click(event: google.maps.MouseEvent) {}
-  
-  // onClick(road, pothole) {
-  //   if (this.filter === "pothole") {
-  //     this.polylines = [];
-  //     for (let place of this.api311.processCoordinates("January 1 2019")) {
-  //       this.addMarker(place.lat, place.lng);
-  //     }
-  //   } else if (this.filter != "pothole") {
-  //     this.markers = [];
-  //     for (let lineyboi of this.apiPaser.processPolylines()) {
-  //       this.polylines.push(lineyboi);
-  //     }
-  //   }
-  // }
   
   toggleOnRoad:boolean = true;
   toggleOnPothole:boolean = true;
@@ -96,11 +82,12 @@ export class RoadComponent implements OnInit {
       this.radioPothole = true;
     }
   }
-  
-  findAddress() {
-    this.searchLocation.getAddress(this.address).subscribe((data:any) => {
-      this.center= data.results[0].geometry.location
-      this.zoom = 16
-    })
+
+  locateAddress(event){
+    this.center = event.results;
+    this.zoom = event.zoom
+
   }
+  
+  
 }
