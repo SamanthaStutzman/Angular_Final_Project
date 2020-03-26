@@ -21,7 +21,7 @@ const routes: Routes = [
     component: InterfaceComponent
   },
   {
-    path: 'road',
+    path: 'road/:center',
     component: RoadComponent
   },
   {

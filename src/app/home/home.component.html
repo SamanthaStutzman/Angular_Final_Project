@@ -6,7 +6,7 @@
         
         <label>
             <search-bar (center)= "locateAddress($event)">
-                <button id="goBtn" [routerLink]="['/road']" routerLinkActive="router-link-active">Go</button>
+                <button id="goBtn" [routerLink]="['/road']" [queryParams]='{results: new google.maps.LatLng(42.963795, -85.670006), zoom: 12}' routerLinkActive="router-link-active">Go</button>
             </search-bar>
         </label>
         

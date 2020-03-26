@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  options = {
+    zoom : 12,
+    center: new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 })
+  }
+  
   
   constructor() { }
   
@@ -21,7 +27,8 @@ export class HomeComponent implements OnInit {
   }
 
   locateAddress(event){
-    
+    this.options = event
+   
 
   }
   
