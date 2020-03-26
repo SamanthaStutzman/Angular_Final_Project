@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { SearchLocationService } from "../search-location.service";
-import { SharedDataService } from "../shared-data.service";
+
 import { Router } from "@angular/router";
 
 @Component({
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     center: new google.maps.LatLng({ lng: -85.6681, lat: 42.9634 })
   };
 
-  constructor(private router: Router, private data: SharedDataService) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
 

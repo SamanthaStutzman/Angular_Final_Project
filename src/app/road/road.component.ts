@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Api311Service } from "../api-311.service";
 import { ApiPaserService } from "../api-paser.service";
-import { SharedDataService } from "src/app/shared-data.service";
+
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

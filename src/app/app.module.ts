@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { StartComponent } from './start/start.component';
 import { RoadComponent } from './road/road.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { SharedDataService } from './shared-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,7 @@ import { SharedDataService } from './shared-data.service';
     FormsModule,
     GoogleMapsModule
   ],
-  providers: [SharedDataService, SearchBarComponent ],
+  providers: [SearchBarComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
