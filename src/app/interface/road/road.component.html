@@ -2,35 +2,38 @@
   
   
   <div id="road-content">
+    <img alt="logo" src="assets/logo.png" style="height: 75px;">
     
     <div class="nav">
-      <img alt="logo" src="assets/logo.png" style="width: 100px; height: 100px;">
-      <button class="btn radioBtn left" [(ngModel)]="filter" name="road" value="road" (click)= "onClickRoad()" [ngClass]="{'radioBtnInactive' : this.radioRoad, 'radioBtnActive' : !this.radioRoad}">Road Quality</button>
-      <button class="btn radioBtn right" [(ngModel)]="filter" name="pothole" value="pothole" (click)= "onClickPothole()" [ngClass]="{'radioBtnInactive' : this.radioPothole, 'radioBtnActive' : !this.radioPothole}">Potholes</button>
-      </div>
-      
-      <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
-        <i class="fas fa-home fa-5x"></i>
-      </button>
-      
+      <button class="btn radioBtn left" (click)= "onClickRoad()" [ngClass]="{'radioBtnInactive' : this.radioRoad, 'radioBtnActive' : !this.radioRoad}">Road Quality</button>
+      <button class="btn radioBtn right" (click)= "onClickPothole()" [ngClass]="{'radioBtnInactive' : this.radioPothole, 'radioBtnActive' : !this.radioPothole}">Potholes</button>
     </div>
     
-    
-    <google-map [width]="width" [height]="height" [center]="center" [zoom]="zoom" (mapClick)="click($event)">
-      
-      <map-marker *ngFor="let marker of markers" 
-      [position]="marker.position" 
-      [label]="marker.label"
-      [title]="marker.title" [options]="marker.options"
-      ></map-marker>
-      
-      <map-polyline *ngFor="let line of polylines"
-      [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
-      ></map-polyline>
-      
-    </google-map>
-    
-  <search-bar (center)= "locateAddress($event)" ></search-bar>
+    <button class="btn homeBtn" [routerLink]="['/home']" routerLinkActive="router-link-active">
+      <i class="fas fa-home fa-5x"></i>
+    </button>
     
   </div>
   
+  
+  <google-map [width]="width" [height]="height" [center]="center" [zoom]="zoom" (mapClick)="click($event)">
+    
+  
+    <map-marker *ngFor="let marker of markers" 
+    [position]="marker.position" 
+    [label]="marker.label"
+    [title]="marker.title" [options]="marker.options"
+    ></map-marker>
+    
+    <map-polyline *ngFor="let line of polylines"
+    [options]="{'path' : line.path, 'strokeColor' : line.strokeColor}"
+    ></map-polyline>
+    
+  </google-map>
+  <search-bar id="search-location" (center)= "locateAddress($event)" ></search-bar>
+  <!-- <div >
+    <input type="text" [(ngModel)]="address" placeholder="Search a new location"/>
+    <button (center)= "locateAddress($event)" id="goBtn">Go</button>
+  </div> -->
+  
+</div>
