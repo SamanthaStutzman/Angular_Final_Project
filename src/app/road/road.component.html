@@ -15,7 +15,6 @@
     
   </div>
   
-  <p>{{this.roadStuff}}</p>
   <google-map [width]="width" [height]="height" [center]="center" [zoom]="zoom" (mapClick)="click($event)">
     
   
@@ -31,9 +30,5 @@
     
   </google-map>
   <search-bar id="search-location" (center)= "locateAddress($event)" ></search-bar>
-  <!-- <div >
-    <input type="text" [(ngModel)]="address" placeholder="Search a new location"/>
-    <button (center)= "locateAddress($event)" id="goBtn">Go</button>
-  </div> -->
   
 </div>

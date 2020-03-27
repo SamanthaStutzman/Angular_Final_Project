@@ -11,9 +11,5 @@ export class AppComponent {
   title = 'AngularFinalProject';
 
   constructor (private myAPI : ApiPaserService) { 
-    //this.myAPI.retrieveData();
-    //this.myData = this.myAPI.data;
   }
-
-  myData = this.myAPI.processPolylines();
 }
