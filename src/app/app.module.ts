@@ -3,20 +3,20 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { GoogleMapsModule } from '@angular/google-maps';
-
+import { GoogleMapsModule } from '@angular/google-maps'
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StartComponent } from './start/start.component';
-import { InterfaceComponent } from './interface/interface.component';
-import { RoadComponent } from './interface/road/road.component';
+import { RoadComponent } from './road/road.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     StartComponent,
     RoadComponent,
-    InterfaceComponent
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,7 @@ import { RoadComponent } from './interface/road/road.component';
     FormsModule,
     GoogleMapsModule
   ],
-  providers: [],
+  providers: [SearchBarComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

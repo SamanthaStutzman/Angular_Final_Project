@@ -12,6 +12,8 @@ export class SearchLocationService {
   
 
   constructor(private myHTTP : HttpClient) { }
+  
+  
   getAddress(address){
     return this.myHTTP.get(`${this.api} + ${address}`)
   }

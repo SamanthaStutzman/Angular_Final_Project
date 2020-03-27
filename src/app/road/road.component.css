@@ -58,31 +58,6 @@ button:focus {
     width: 100vw;
 }
 
-#search-location {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-input {
-    padding: 10px;
-    font-size: 1rem;
-    width: 75%;
-    max-width: 300px;
-    height: 40px;
-    border-radius: 5px 0px 0px 5px;
-}
-
-#goBtn {
-    width: 50px;
-    height: 40px;
-    background-color: #20B874;
-    border: none;
-    border-radius: 0px 5px 5px 0px;
-    color: white;
-    font-size: 20px;
-}
 
 .radioBtn {
     width: 125px;
